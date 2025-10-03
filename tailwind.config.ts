@@ -51,6 +51,12 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom color scheme
+        'electric-purple': '#8A2BE2',
+        'medium-orchid': '#BA55D3',
+        'turquoise': '#40E0D0',
+        'near-black': '#121212',
+        'light-text': '#EAEAEA',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -66,10 +72,16 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "float": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+          "33%": { transform: "translate(50px, -50px) scale(1.1)" },
+          "66%": { transform: "translate(-30px, 30px) scale(0.9)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 20s ease-in-out infinite",
       },
     },
   },
