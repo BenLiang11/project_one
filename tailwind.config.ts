@@ -54,7 +54,7 @@ const config: Config = {
         // Custom color scheme
         'electric-purple': '#8A2BE2',
         'medium-orchid': '#BA55D3',
-        'turquoise': '#40E0D0',
+        'turquoise': '#40B4F0',
         'near-black': '#121212',
         'light-text': '#EAEAEA',
       },
