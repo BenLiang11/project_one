@@ -6,27 +6,20 @@ import { Video, Sparkles, Zap } from "lucide-react";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen grid-background relative">
-      {/* Animated background orbs */}
-      <div className="orb-background">
-        <div className="orb orb-1"></div>
-        <div className="orb orb-2"></div>
-        <div className="orb orb-3"></div>
-      </div>
-
       <Navbar />
       
       <main className="flex-1 relative z-10">
         {/* Hero Section */}
         <section className="container px-4 py-24 md:py-32">
           <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
-            <div className="inline-flex items-center rounded-full border border-electric-purple/30 bg-electric-purple/10 px-4 py-1.5 text-sm font-medium mb-4 backdrop-blur-sm">
-              <Sparkles className="mr-2 h-4 w-4 text-turquoise" />
-              <span className="text-light-text">AI-Powered Video Generation</span>
-            </div>
+                <div className="inline-flex items-center rounded-full border border-electric-purple/30 bg-electric-purple/10 px-4 py-1.5 text-sm font-medium mb-4 backdrop-blur-sm">
+                  <Sparkles className="mr-2 h-4 w-4 text-medium-orchid" />
+                  <span className="text-light-text">AI-Powered Video Generation</span>
+                </div>
             
-            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-light-text">
-              Create Amazing Videos with{" "}
-              <span className="gradient-text">
+            <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+              <span className="text-electric-purple">Create Amazing Videos</span> with{" "}
+              <span className="accent-gradient-text">
                 AI in Seconds
               </span>
             </h1>
@@ -40,7 +33,7 @@ export default function Home() {
               <Link href="/create">
                 <Button 
                   size="lg" 
-                  className="text-lg px-8 bg-electric-purple hover:bg-electric-purple/90 text-white glow-button"
+                  className="text-lg px-8 bg-electric-purple hover:bg-electric-purple/90 text-white"
                 >
                   <Zap className="mr-2 h-5 w-5" />
                   Try Clip Pilot
@@ -92,15 +85,15 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-turquoise/20 hover:border-turquoise/50 transition-all">
-              <div className="flex h-14 w-14 items-center justify-center rounded-full bg-turquoise/20 border border-turquoise/30">
-                <Zap className="h-7 w-7 text-turquoise" />
-              </div>
-              <h3 className="text-xl font-bold text-light-text">Lightning Fast</h3>
-              <p className="text-light-text/60">
-                From idea to finished video in minutes, not hours
-              </p>
-            </div>
+                <div className="flex flex-col items-center text-center space-y-4 p-6 rounded-lg bg-card/50 backdrop-blur-sm border border-light-purple/20 hover:border-light-purple/50 transition-all">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-light-purple/20 border border-light-purple/30">
+                    <Zap className="h-7 w-7 text-light-purple" />
+                  </div>
+                  <h3 className="text-xl font-bold text-light-text">Lightning Fast</h3>
+                  <p className="text-light-text/60">
+                    From idea to finished video in minutes, not hours
+                  </p>
+                </div>
           </div>
         </section>
       </main>
@@ -113,15 +106,15 @@ export default function Home() {
               © 2025 Clip Pilot. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <Link href="/terms" className="text-sm text-light-text/50 hover:text-turquoise transition-colors">
-                Terms
-              </Link>
-              <Link href="/privacy" className="text-sm text-light-text/50 hover:text-turquoise transition-colors">
-                Privacy
-              </Link>
-              <Link href="/contact" className="text-sm text-light-text/50 hover:text-turquoise transition-colors">
-                Contact
-              </Link>
+                  <Link href="/terms" className="text-sm text-light-text/50 hover:text-medium-orchid transition-colors">
+                    Terms
+                  </Link>
+                  <Link href="/privacy" className="text-sm text-light-text/50 hover:text-medium-orchid transition-colors">
+                    Privacy
+                  </Link>
+                  <Link href="/contact" className="text-sm text-light-text/50 hover:text-medium-orchid transition-colors">
+                    Contact
+                  </Link>
             </div>
           </div>
         </div>

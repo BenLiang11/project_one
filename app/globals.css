@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Dark theme with purple/turquoise accent */
+    /* Dark theme with purple accent */
     --background: 0 0% 7%;
     --foreground: 0 0% 92%;
     --card: 0 0% 10%;
@@ -15,8 +15,8 @@
     --primary-foreground: 0 0% 92%;
     --secondary: 282 59% 58%;
     --secondary-foreground: 0 0% 92%;
-    --accent: 203 84% 60%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 282 59% 58%;
+    --accent-foreground: 0 0% 92%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
     --destructive: 0 84.2% 60.2%;
@@ -38,102 +38,17 @@
   }
 }
 
-/* Futuristic grid background */
+/* Minimal dark background */
 .grid-background {
-  background-color: #121212;
-  background-image: 
-    linear-gradient(rgba(138, 43, 226, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(138, 43, 226, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(138, 43, 226, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(138, 43, 226, 0.03) 1px, transparent 1px);
-  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
-  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  background-color: #0a0a0a;
   position: relative;
 }
 
-.grid-background::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(64, 180, 240, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-/* Animated gradient orbs */
-.orb-background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-  animation: float 20s ease-in-out infinite;
-}
-
-.orb-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(138, 43, 226, 0.4) 0%, transparent 70%);
-  top: -10%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.orb-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(64, 180, 240, 0.3) 0%, transparent 70%);
-  bottom: -10%;
-  right: -10%;
-  animation-delay: 7s;
-}
-
-.orb-3 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, rgba(186, 85, 211, 0.3) 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: 14s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(50px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-30px, 30px) scale(0.9);
-  }
-}
-
-/* Gradient text effect */
+/* Text styles */
 .gradient-text {
-  background: linear-gradient(135deg, #8A2BE2 0%, #BA55D3 50%, #40B4F0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #8A2BE2;
 }
 
-/* Glow effect for buttons */
-.glow-button {
-  box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
-  transition: box-shadow 0.3s ease;
-}
-
-.glow-button:hover {
-  box-shadow: 0 0 30px rgba(138, 43, 226, 0.5), 0 0 60px rgba(138, 43, 226, 0.3);
+.accent-gradient-text {
+  color: #BA55D3;
 }

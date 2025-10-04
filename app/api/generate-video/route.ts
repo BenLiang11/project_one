@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
-import { generateVideoScript, generateImagePrompts } from '@/lib/api/openai';
+import { generateImagePrompts } from '@/lib/api/openai';
 import { generateImage, waitForImageGeneration } from '@/lib/api/leonardo';
 import { generateVoiceover } from '@/lib/api/elevenlabs';
 import { createVideo, waitForRender } from '@/lib/api/creatomate';
-import type { VideoGenerationRequest } from '@/types';
 
 export async function POST(request: NextRequest) {
   try {
@@ -22,12 +21,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const body: VideoGenerationRequest = await request.json();
-    const { prompt, format, title } = body;
+    const body = await request.json();
+    const { title, script, theme, music, voice, aspectRatio } = body;
 
-    if (!prompt || !format) {
+    if (!title || !script) {
       return NextResponse.json(
-        { error: 'Prompt and format are required' },
+        { error: 'Title and script are required' },
         { status: 400 }
       );
     }
@@ -37,9 +36,10 @@ export async function POST(request: NextRequest) {
       .from('video_projects')
       .insert({
         user_id: user.id,
-        title: title || `${format} video`,
-        prompt,
-        format,
+        title,
+        prompt: script,
+        script,
+        format: aspectRatio || '16:9',
         status: 'processing',
       })
       .select()
@@ -49,8 +49,8 @@ export async function POST(request: NextRequest) {
       throw new Error('Failed to create project');
     }
 
-    // Start async video generation process
-    generateVideoAsync(project.id, prompt, format);
+    // Start async video generation process (pass additional params)
+    generateVideoAsync(project.id, script, aspectRatio, theme, music, voice);
 
     return NextResponse.json({
       projectId: project.id,
@@ -68,25 +68,17 @@ export async function POST(request: NextRequest) {
 
 async function generateVideoAsync(
   projectId: string,
-  prompt: string,
-  format: string
+  script: string,
+  format: string,
+  theme?: string,
+  music?: string,
+  voice?: string
 ) {
   const supabase = await createClient();
 
   try {
-    // Step 1: Generate script
-    const script = await generateVideoScript(prompt, format);
-    
-    if (!script) {
-      throw new Error('Failed to generate script');
-    }
-    
-    await supabase
-      .from('video_projects')
-      .update({ script })
-      .eq('id', projectId);
-
-    // Step 2: Generate image prompts
+    // Script is already provided by the user
+    // Step 1: Generate image prompts
     const imagePromptsText = await generateImagePrompts(script, 3);
     
     if (!imagePromptsText) {

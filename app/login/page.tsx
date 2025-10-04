@@ -62,12 +62,6 @@ export default function LoginPage() {
 
   return (
     <div className="flex flex-col min-h-screen grid-background relative">
-      <div className="orb-background">
-        <div className="orb orb-1"></div>
-        <div className="orb orb-2"></div>
-        <div className="orb orb-3"></div>
-      </div>
-
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center px-4 py-12 relative z-10">
@@ -140,7 +134,7 @@ export default function LoginPage() {
                   </Label>
                   <Link
                     href="/forgot-password"
-                    className="text-sm text-turquoise hover:text-turquoise/80"
+                    className="text-sm text-medium-orchid hover:text-medium-orchid/80"
                   >
                     Forgot password?
                   </Link>
@@ -164,7 +158,7 @@ export default function LoginPage() {
 
               <Button
                 type="submit"
-                className="w-full bg-electric-purple hover:bg-electric-purple/90 text-white glow-button"
+                className="w-full bg-electric-purple hover:bg-electric-purple/90 text-white"
                 disabled={loading}
               >
                 {loading ? (
@@ -181,7 +175,7 @@ export default function LoginPage() {
           <CardFooter className="flex flex-col space-y-2">
             <div className="text-sm text-center text-light-text/60">
               Don&apos;t have an account?{" "}
-              <Link href="/signup" className="text-turquoise hover:text-turquoise/80 font-medium">
+              <Link href="/signup" className="text-medium-orchid hover:text-medium-orchid/80 font-medium">
                 Sign up
               </Link>
             </div>

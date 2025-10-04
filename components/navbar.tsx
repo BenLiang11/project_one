@@ -20,36 +20,36 @@ export function Navbar() {
         <div className="flex items-center space-x-4">
           {isDashboard ? (
             <>
-              <Link href="/dashboard">
-                <Button variant="ghost" className="text-light-text hover:text-turquoise hover:bg-electric-purple/10">
-                  Dashboard
-                </Button>
-              </Link>
-              <Link href="/create">
-                <Button variant="ghost" className="text-light-text hover:text-turquoise hover:bg-electric-purple/10">
-                  Create
-                </Button>
-              </Link>
-              <form action="/api/auth/logout" method="POST">
-                <Button variant="ghost" className="text-light-text hover:text-turquoise hover:bg-electric-purple/10">
-                  Logout
-                </Button>
-              </form>
+                  <Link href="/dashboard">
+                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                      Dashboard
+                    </Button>
+                  </Link>
+                  <Link href="/create">
+                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                      Create
+                    </Button>
+                  </Link>
+                  <form action="/api/auth/logout" method="POST">
+                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                      Logout
+                    </Button>
+                  </form>
             </>
           ) : (
             <>
-              <Link href="/pricing">
-                <Button variant="ghost" className="text-light-text hover:text-turquoise hover:bg-electric-purple/10">
-                  Pricing
-                </Button>
-              </Link>
-              <Link href="/login">
-                <Button variant="ghost" className="text-light-text hover:text-turquoise hover:bg-electric-purple/10">
-                  Login
-                </Button>
-              </Link>
+                  <Link href="/pricing">
+                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                      Pricing
+                    </Button>
+                  </Link>
+                  <Link href="/login">
+                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                      Login
+                    </Button>
+                  </Link>
               <Link href="/signup">
-                <Button className="bg-electric-purple hover:bg-electric-purple/90 text-white glow-button">
+                <Button className="bg-electric-purple hover:bg-electric-purple/90 text-white">
                   Sign Up
                 </Button>
               </Link>

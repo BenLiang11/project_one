@@ -49,7 +49,7 @@ const plans = [
     description: "For professionals and small teams",
     monthlyPrice: 59,
     yearlyPrice: 531,
-    color: "turquoise",
+    color: "light-purple",
     features: [
       "100 videos per month",
       "Up to 300 seconds per video",
@@ -89,20 +89,14 @@ export default function PricingPage() {
 
   return (
     <div className="flex flex-col min-h-screen grid-background relative">
-      <div className="orb-background">
-        <div className="orb orb-1"></div>
-        <div className="orb orb-2"></div>
-        <div className="orb orb-3"></div>
-      </div>
-
       <Navbar />
 
       <main className="flex-1 relative z-10 py-16">
         <div className="container px-4">
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-light-text mb-4">
-              Choose Your <span className="gradient-text">Perfect Plan</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="text-electric-purple">Choose Your</span> <span className="accent-gradient-text">Perfect Plan</span>
             </h1>
             <p className="text-lg text-light-text/60 max-w-2xl mx-auto">
               Start creating AI-powered videos today. All plans include core features.
@@ -136,10 +130,10 @@ export default function PricingPage() {
             >
               Yearly
             </button>
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-turquoise/20 border border-turquoise/50">
-              <Sparkles className="h-4 w-4 text-turquoise" />
-              <span className="text-sm font-semibold text-turquoise">Save 25%</span>
-            </div>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-medium-orchid/20 border border-medium-orchid/50">
+                  <Sparkles className="h-4 w-4 text-medium-orchid" />
+                  <span className="text-sm font-semibold text-medium-orchid">Save 25%</span>
+                </div>
           </div>
 
           {/* Pricing Cards */}
@@ -158,7 +152,7 @@ export default function PricingPage() {
                 >
                   {plan.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-electric-purple text-white text-sm font-semibold glow-button">
+                      <span className="inline-flex items-center gap-1 px-4 py-1.5 rounded-full bg-electric-purple text-white text-sm font-semibold">
                         <Sparkles className="h-3 w-3" />
                         Most Popular
                       </span>
@@ -169,16 +163,16 @@ export default function PricingPage() {
                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full mb-4 ${
                       plan.name === "Starter" || plan.name === "Agency" 
                         ? "bg-electric-purple/20 border border-electric-purple/30"
-                        : plan.name === "Creator"
-                        ? "bg-medium-orchid/20 border border-medium-orchid/30"
-                        : "bg-turquoise/20 border border-turquoise/30"
+                            : plan.name === "Creator"
+                            ? "bg-medium-orchid/20 border border-medium-orchid/30"
+                            : "bg-light-purple/20 border border-light-purple/30"
                     }`}>
                       <Icon className={`h-6 w-6 ${
                         plan.name === "Starter" || plan.name === "Agency"
                           ? "text-electric-purple"
-                          : plan.name === "Creator"
-                          ? "text-medium-orchid"
-                          : "text-turquoise"
+                                  : plan.name === "Creator"
+                                  ? "text-medium-orchid"
+                                  : "text-light-purple"
                       }`} />
                     </div>
                     <CardTitle className="text-2xl font-bold text-light-text">
@@ -201,13 +195,13 @@ export default function PricingPage() {
                       </div>
                       {isYearly && (
                         <div className="flex flex-col gap-1">
-                          <div className="text-sm text-turquoise font-medium">
+                          <div className="text-sm text-medium-orchid font-medium">
                             ${(displayPrice / 12).toFixed(0)}/month billed yearly
                           </div>
                           <div className="text-xs text-light-text/50 line-through">
                             Was ${plan.monthlyPrice}/month
                           </div>
-                          <div className="inline-flex items-center gap-1 text-xs text-turquoise">
+                          <div className="inline-flex items-center gap-1 text-xs text-medium-orchid">
                             <Sparkles className="h-3 w-3" />
                             Save ${(monthlySavings * 12).toFixed(0)}/year
                           </div>
@@ -223,7 +217,7 @@ export default function PricingPage() {
                               ? "text-electric-purple"
                               : plan.name === "Creator"
                               ? "text-medium-orchid"
-                              : "text-turquoise"
+                              : "text-light-purple"
                           }`} />
                           <span className="text-sm text-light-text/80">{feature}</span>
                         </li>
@@ -236,7 +230,7 @@ export default function PricingPage() {
                       <Button
                         className={`w-full ${
                           plan.popular
-                            ? "bg-electric-purple hover:bg-electric-purple/90 text-white glow-button"
+                            ? "bg-electric-purple hover:bg-electric-purple/90 text-white"
                             : "bg-muted/50 hover:bg-muted text-light-text border border-electric-purple/30"
                         }`}
                       >
@@ -292,7 +286,7 @@ export default function PricingPage() {
                 Our team is here to help you choose the right plan
               </p>
               <Link href="/contact">
-                <Button variant="outline" className="border-turquoise/50 text-turquoise hover:bg-turquoise/10">
+                <Button variant="outline" className="border-electric-purple/50 text-light-text hover:bg-electric-purple/10">
                   Contact Sales
                 </Button>
               </Link>
