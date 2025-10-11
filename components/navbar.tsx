@@ -9,7 +9,7 @@ export function Navbar() {
   const isDashboard = pathname?.startsWith("/dashboard");
 
   return (
-    <nav className="border-b border-electric-purple/20 bg-near-black/80 backdrop-blur-md sticky top-0 z-50">
+    <nav className="border-b border-gray-600/30 bg-near-black/80 backdrop-blur-md sticky top-0 z-50">
       <div className="container flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-2xl font-bold gradient-text">
@@ -39,17 +39,17 @@ export function Navbar() {
           ) : (
             <>
                   <Link href="/pricing">
-                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                    <Button variant="ghost" className="text-light-text hover:text-gray-300 hover:bg-gray-400/10">
                       Pricing
                     </Button>
                   </Link>
                   <Link href="/login">
-                    <Button variant="ghost" className="text-light-text hover:text-medium-orchid hover:bg-electric-purple/10">
+                    <Button variant="ghost" className="text-light-text hover:text-gray-300 hover:bg-gray-400/10">
                       Login
                     </Button>
                   </Link>
               <Link href="/signup">
-                <Button className="bg-electric-purple hover:bg-electric-purple/90 text-white">
+                <Button variant="outline" className="border-gray-400 text-light-text hover:bg-gray-400/10 hover:border-gray-300">
                   Sign Up
                 </Button>
               </Link>

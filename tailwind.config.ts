@@ -52,10 +52,10 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         // Custom color scheme
-        'electric-purple': '#8A2BE2',
-        'medium-orchid': '#BA55D3',
+        'electric-purple': '#9139e3',
+        'medium-orchid': '#c15fd9',
         'light-purple': '#C8A2E2',
-        'near-black': '#121212',
+        'near-black': '#232324',
         'light-text': '#EAEAEA',
       },
       borderRadius: {
