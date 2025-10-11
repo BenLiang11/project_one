@@ -106,7 +106,7 @@ export default function SupportPage() {
       setSubject("");
       setMessage("");
       setTimeout(() => setSuccess(false), 5000);
-    } catch (error) {
+    } catch {
       console.error("Failed to send message");
     } finally {
       setLoading(false);
@@ -233,7 +233,7 @@ export default function SupportPage() {
                 <CardHeader>
                   <CardTitle className="text-light-text">Send a Message</CardTitle>
                   <CardDescription className="text-light-text/60">
-                    We'll get back to you soon
+                    We&apos;ll get back to you soon
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -242,7 +242,7 @@ export default function SupportPage() {
                       <CheckCircle2 className="h-12 w-12 text-white mx-auto mb-4" />
                       <h3 className="font-semibold text-light-text mb-2">Message Sent!</h3>
                       <p className="text-sm text-light-text/60">
-                        We'll respond to your inquiry within 24 hours.
+                        We&apos;ll respond to your inquiry within 24 hours.
                       </p>
                     </div>
                   ) : (

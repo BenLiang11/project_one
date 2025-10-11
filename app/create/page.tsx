@@ -86,8 +86,8 @@ export default function CreatePage() {
       const data = await response.json();
       setScript(data.script);
       setScriptPrompt("");
-    } catch (err: any) {
-      setError(err.message || "Failed to generate script");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Failed to generate script");
     } finally {
       setGeneratingScript(false);
     }
@@ -127,8 +127,8 @@ export default function CreatePage() {
 
       const data = await response.json();
       router.push(`/dashboard/videos?new=${data.projectId}`);
-    } catch (err: any) {
-      setError(err.message || "Failed to generate video");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Failed to generate video");
     } finally {
       setGenerating(false);
     }

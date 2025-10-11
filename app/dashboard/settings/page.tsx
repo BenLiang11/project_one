@@ -14,7 +14,6 @@ import {
   Bell, 
   Palette, 
   AlertTriangle,
-  Mail,
   Save,
   Loader2,
   CheckCircle2
@@ -49,7 +48,7 @@ export default function SettingsPage() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSuccess("Profile updated successfully!");
-    } catch (err) {
+    } catch {
       setError("Failed to update profile");
     } finally {
       setLoading(false);
@@ -78,7 +77,7 @@ export default function SettingsPage() {
       setCurrentPassword("");
       setNewPassword("");
       setConfirmPassword("");
-    } catch (err) {
+    } catch {
       setError("Failed to change password");
     } finally {
       setLoading(false);
@@ -94,7 +93,7 @@ export default function SettingsPage() {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
       setSuccess("Notification preferences saved!");
-    } catch (err) {
+    } catch {
       setError("Failed to save preferences");
     } finally {
       setLoading(false);

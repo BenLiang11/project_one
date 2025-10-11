@@ -56,8 +56,8 @@ export default function SignUpPage() {
         router.push("/dashboard");
         router.refresh();
       }, 2000);
-    } catch (error: any) {
-      setError(error.message || "An error occurred during sign up");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : "An error occurred during sign up");
     } finally {
       setLoading(false);
     }
@@ -76,8 +76,8 @@ export default function SignUpPage() {
       });
 
       if (error) throw error;
-    } catch (error: any) {
-      setError(error.message || "An error occurred during Google sign up");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : "An error occurred during Google sign up");
       setLoading(false);
     }
   };

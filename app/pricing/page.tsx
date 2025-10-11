@@ -141,7 +141,7 @@ export default function PricingPage() {
             {plans.map((plan) => {
               const Icon = plan.icon;
               const displayPrice = isYearly ? plan.yearlyPrice : plan.monthlyPrice;
-              const monthlySavings = isYearly ? (plan.monthlyPrice - plan.yearlyPrice / 12).toFixed(2) : 0;
+              const monthlySavings = isYearly ? (plan.monthlyPrice - plan.yearlyPrice / 12) : 0;
 
               return (
                 <Card

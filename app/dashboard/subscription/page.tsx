@@ -49,7 +49,7 @@ export default function SubscriptionPage() {
       await new Promise(resolve => setTimeout(resolve, 1500));
       alert("Subscription cancelled successfully. Access continues until " + currentPlan.renewalDate);
       setShowCancelModal(false);
-    } catch (error) {
+    } catch {
       console.error("Failed to cancel subscription");
     } finally {
       setLoading(false);
@@ -288,7 +288,7 @@ export default function SubscriptionPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-light-text/70">
-                Your subscription will remain active until {currentPlan.renewalDate}. After that, you'll lose access to:
+                Your subscription will remain active until {currentPlan.renewalDate}. After that, you&apos;ll lose access to:
               </p>
               <ul className="space-y-2 text-sm text-light-text/60">
                 <li className="flex items-start gap-2">

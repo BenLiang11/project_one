@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { title, script, theme, music, voice, aspectRatio } = body;
+    const { title, script, aspectRatio } = body;
 
     if (!title || !script) {
       return NextResponse.json(
@@ -49,8 +49,8 @@ export async function POST(request: NextRequest) {
       throw new Error('Failed to create project');
     }
 
-    // Start async video generation process (pass additional params)
-    generateVideoAsync(project.id, script, aspectRatio, theme, music, voice);
+    // Start async video generation process
+    generateVideoAsync(project.id, script);
 
     return NextResponse.json({
       projectId: project.id,
@@ -68,11 +68,7 @@ export async function POST(request: NextRequest) {
 
 async function generateVideoAsync(
   projectId: string,
-  script: string,
-  format: string,
-  theme?: string,
-  music?: string,
-  voice?: string
+  script: string
 ) {
   const supabase = await createClient();
 

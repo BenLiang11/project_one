@@ -1,6 +1,6 @@
 "use client";
 
-import { User, Settings, LogOut } from "lucide-react";
+import { Settings, LogOut } from "lucide-react";
 import Link from "next/link";
 import {
   DropdownMenu,

@@ -37,8 +37,6 @@ export function CreditsMenu() {
     fetchCredits();
   }, []);
 
-  const percentageUsed = ((totalCredits - credits) / totalCredits) * 100;
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

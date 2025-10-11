@@ -57,10 +57,10 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ script });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error generating script:', error);
     
-    if (error?.status === 401) {
+    if (error && typeof error === 'object' && 'status' in error && error.status === 401) {
       return NextResponse.json(
         { error: 'Invalid OpenAI API key' },
         { status: 500 }
@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { error: error.message || 'Internal server error' },
+      { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
     );
   }

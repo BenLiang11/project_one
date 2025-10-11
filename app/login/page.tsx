@@ -34,8 +34,8 @@ export default function LoginPage() {
 
       router.push("/dashboard");
       router.refresh();
-    } catch (error: any) {
-      setError(error.message || "An error occurred during login");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : "An error occurred during login");
     } finally {
       setLoading(false);
     }
@@ -54,8 +54,8 @@ export default function LoginPage() {
       });
 
       if (error) throw error;
-    } catch (error: any) {
-      setError(error.message || "An error occurred during Google sign in");
+    } catch (error: unknown) {
+      setError(error instanceof Error ? error.message : "An error occurred during Google sign in");
       setLoading(false);
     }
   };
